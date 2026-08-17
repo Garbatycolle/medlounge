@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedLounge – Study Lounge for Medical & Physiotherapy Students</title>
+  <meta name="description" content="Complete study hub for medical and physiotherapy students: all subjects, past questions, interactive quizzes, flashcards, study tools and more.">
+  <meta name="theme-color" content="#0d9488">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">🩺</span>
+        <span class="logo-text">Med<span>Lounge</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#quizzes">Quizzes</a></li>
+        <li><a href="#pastqs">Past Qs</a></li>
+        <li><a href="#osce">OSCE</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#planner">Planner</a></li>
+        <li><a href="#favourites">★</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">🩺 Free Study Platform</div>
+        <h1>Your Complete <span class="accent">Study Lounge</span><br>for Medical & PT Students</h1>
+        <p class="hero-sub">Subjects, quizzes, OSCE checklists, spaced-repetition flashcards, planner and more — built to help you pass and excel.</p>
+        <div class="hero-cta">
+          <a href="#subjects" class="btn btn-primary btn-lg">Explore Subjects</a>
+          <a href="#quizzes" class="btn btn-secondary btn-lg">Take a Quiz</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>25+</strong><span>Subjects</span></div>
+          <div class="stat"><strong>OSCE</strong><span>Checklists</span></div>
+          <div class="stat"><strong>SRS</strong><span>Flashcards</span></div>
+          <div class="stat"><strong>PWA</strong><span>Installable</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-illustration">
+          <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#14b8a6"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#ea580c"/>
+              </linearGradient>
+            </defs>
+            <circle cx="160" cy="160" r="130" fill="url(#g1)" opacity="0.12"/>
+            <circle cx="160" cy="160" r="100" fill="url(#g1)" opacity="0.18"/>
+            <rect x="108" y="72" width="104" height="150" rx="24" fill="url(#g1)"/>
+            <rect x="124" y="98" width="72" height="52" rx="12" fill="#ffffff" opacity="0.92"/>
+            <circle cx="160" cy="178" r="20" fill="#ffffff" opacity="0.95"/>
+            <path d="M160 198 v40" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+            <path d="M125 255 Q160 290 195 255" stroke="url(#g2)" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <circle cx="58" cy="88" r="28" fill="#14b8a6"/>
+            <circle cx="262" cy="108" r="28" fill="#0ea5e9"/>
+            <circle cx="68" cy="235" r="28" fill="#f59e0b"/>
+            <circle cx="252" cy="228" r="28" fill="#8b5cf6"/>
+          </svg>
+          <div class="illust-emoji e1">🦴</div>
+          <div class="illust-emoji e2">🧠</div>
+          <div class="illust-emoji e3">💪</div>
+          <div class="illust-emoji e4">💊</div>
+        </div>
+        <div class="visual-card v1"><span class="v-icon">🦴</span><span>Anatomy</span></div>
+        <div class="visual-card v2"><span class="v-icon">💪</span><span>Physio</span></div>
+        <div class="visual-card v3"><span class="v-icon">🧠</span><span>Neuro</span></div>
+        <div class="visual-card v4"><span class="v-icon">💊</span><span>Pharma</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Feature strip -->
+  <section class="feature-strip">
+    <div class="container feature-strip-grid">
+      <div class="feature-pill"><span>📚</span> All core subjects</div>
+      <div class="feature-pill"><span>🧪</span> Interactive quizzes</div>
+      <div class="feature-pill"><span>📋</span> OSCE checklists</div>
+      <div class="feature-pill"><span>🃏</span> Spaced repetition</div>
+      <div class="feature-pill"><span>📅</span> Study planner</div>
+      <div class="feature-pill"><span>🌙</span> Dark mode</div>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section id="subjects" class="section">
+    <div class="container">
+      <h2 class="section-title">Medical & Physiotherapy Subjects</h2>
+      <p class="section-sub">Browse by category or year. Click any subject for overview, key topics, high-yield notes and study tips.</p>
+      
+      <div class="search-wrap">
+        <input type="search" id="subjectSearch" placeholder="Search subjects or topics..." aria-label="Search subjects">
+      </div>
+
+      <div class="subject-filters" id="categoryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="preclinical">Preclinical</button>
+        <button class="filter-btn" data-filter="clinical">Clinical</button>
+        <button class="filter-btn" data-filter="physiotherapy">Physiotherapy</button>
+        <button class="filter-btn" data-filter="favourites">★ Favourites</button>
+      </div>
+
+      <div class="subject-filters year-filters" id="yearFilters">
+        <span class="filter-label">By Year:</span>
+        <button class="filter-btn year-btn active" data-year="all">All Years</button>
+        <button class="filter-btn year-btn" data-year="1">Year 1</button>
+        <button class="filter-btn year-btn" data-year="2">Year 2</button>
+        <button class="filter-btn year-btn" data-year="3">Year 3</button>
+        <button class="filter-btn year-btn" data-year="4">Year 4+</button>
+      </div>
+
+      <div class="subjects-grid" id="subjectsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Subject Modal -->
+  <div class="modal" id="subjectModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Quizzes Section -->
+  <section id="quizzes" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Interactive Quizzes</h2>
+      <p class="section-sub">Test yourself with active recall. Choose a subject and difficulty. Instant feedback + explanations.</p>
+      
+      <div class="quiz-selector">
+        <select id="quizSubject">
+          <option value="">Select Subject...</option>
+          <option value="anatomy">Anatomy</option>
+          <option value="physiology">Physiology</option>
+          <option value="biochemistry">Biochemistry</option>
+          <option value="pathology">Pathology</option>
+          <option value="pharmacology">Pharmacology</option>
+          <option value="microbiology">Microbiology</option>
+          <option value="medicine">Internal Medicine</option>
+          <option value="surgery">Surgery</option>
+          <option value="kinesiology">Kinesiology & Biomechanics</option>
+          <option value="therapeutic-exercise">Therapeutic Exercise</option>
+          <option value="ortho-pt">Orthopaedic Physiotherapy</option>
+          <option value="neuro-pt">Neurological Physiotherapy</option>
+        </select>
+        <select id="quizDifficulty">
+          <option value="mixed">Mixed Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+      </div>
+
+      <div id="quizContainer" class="quiz-container hidden">
+        <div class="quiz-header">
+          <span id="quizProgress">Question 1 / 10</span>
+          <span id="quizScore">Score: 0</span>
+        </div>
+        <div id="quizQuestion" class="quiz-question"></div>
+        <div id="quizOptions" class="quiz-options"></div>
+        <div id="quizFeedback" class="quiz-feedback hidden"></div>
+        <div class="quiz-nav">
+          <button class="btn btn-secondary" id="nextQuestionBtn" disabled>Next Question</button>
+          <button class="btn btn-primary hidden" id="finishQuizBtn">Finish Quiz</button>
+        </div>
+      </div>
+
+      <div id="quizResults" class="quiz-results hidden">
+        <h3>Quiz Complete!</h3>
+        <div class="results-score" id="finalScore"></div>
+        <p id="resultsMessage"></p>
+        <button class="btn btn-primary" id="retryQuizBtn">Try Another Quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Questions Section -->
+  <section id="pastqs" class="section">
+    <div class="container">
+      <h2 class="section-title">Past & Exam-Style Questions</h2>
+      <p class="section-sub">Practice with realistic vignette-style questions. Real institutional past papers vary — use these for active practice and exam technique.</p>
+      
+      <div class="pastqs-controls">
+        <select id="pastqSubject">
+          <option value="all">All Subjects</option>
+          <option value="anatomy">Anatomy</option>
+          <option value="physiology">Physiology</option>
+          <option value="pathology">Pathology</option>
+          <option value="medicine">Medicine</option>
+          <option value="surgery">Surgery</option>
+        </select>
+        <button class="btn btn-secondary" id="loadPastQs">Load Questions</button>
+      </div>
+
+      <div id="pastqsList" class="pastqs-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- OSCE / Practical Skills -->
+  <section id="osce" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">OSCE & Practical Skills</h2>
+      <p class="section-sub">Checklists for clinical and physiotherapy practical exams. Tick items as you practise.</p>
+      <div class="osce-controls">
+        <select id="osceSelect">
+          <option value="history">History Taking</option>
+          <option value="cvs">Cardiovascular Examination</option>
+          <option value="resp">Respiratory Examination</option>
+          <option value="neuro">Neurological Examination</option>
+          <option value="msk">MSK Assessment (PT)</option>
+          <option value="gait">Gait Analysis (PT)</option>
+          <option value="transfer">Patient Transfer & Handling</option>
+        </select>
+        <button class="btn btn-secondary" id="loadOsce">Load Checklist</button>
+        <button class="btn btn-sm btn-secondary" id="resetOsce">Reset Ticks</button>
+      </div>
+      <div id="osceChecklist" class="osce-checklist">
+        <p class="empty-fav">Select a skill and click Load Checklist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Tools -->
+  <section id="tools" class="section">
+    <div class="container">
+      <h2 class="section-title">Study Tools</h2>
+      <p class="section-sub">Boost focus and retention with built-in tools. Includes spaced-repetition flashcards.</p>
+
+      <div class="tools-grid">
+        <!-- Pomodoro -->
+        <div class="tool-card">
+          <h3>⏱ Pomodoro Timer</h3>
+          <div class="pomodoro">
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-controls">
+              <button class="btn btn-sm" id="timerStart">Start</button>
+              <button class="btn btn-sm btn-secondary" id="timerPause">Pause</button>
+              <button class="btn btn-sm btn-secondary" id="timerReset">Reset</button>
+            </div>
+            <div class="timer-modes">
+              <button class="mode-btn active" data-min="25">Focus 25</button>
+              <button class="mode-btn" data-min="15">Short 15</button>
+              <button class="mode-btn" data-min="5">Break 5</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spaced Repetition Flashcards -->
+        <div class="tool-card tool-card-wide">
+          <h3>🃏 Spaced-Repetition Flashcards</h3>
+          <div class="flashcard" id="flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-front" id="fcFront">Click a rating or Next to start</div>
+              <div class="flashcard-back" id="fcBack"></div>
+            </div>
+          </div>
+          <div class="flashcard-controls srs-controls">
+            <button class="btn btn-sm" id="fcFlip">Flip</button>
+            <button class="btn btn-sm srs-again" id="fcAgain" title="Again – show soon">Again</button>
+            <button class="btn btn-sm srs-hard" id="fcHard" title="Hard">Hard</button>
+            <button class="btn btn-sm srs-good" id="fcGood" title="Good">Good</button>
+            <button class="btn btn-sm srs-easy" id="fcEasy" title="Easy – longer interval">Easy</button>
+          </div>
+          <p class="srs-hint" id="srsHint">Rate after flipping to schedule the next review.</p>
+        </div>
+
+        <!-- Daily Challenge -->
+        <div class="tool-card">
+          <h3>🔥 Daily Brain Boost</h3>
+          <p>One random high-yield question every day.</p>
+          <div id="dailyChallenge" class="daily-challenge">
+            <button class="btn btn-primary" id="loadDaily">Get Today's Question</button>
+          </div>
+        </div>
+
+        <!-- Progress + Export -->
+        <div class="tool-card">
+          <h3>📊 Progress & Sync</h3>
+          <div id="progressStats">
+            <p>Quizzes completed: <strong id="quizCount">0</strong></p>
+            <p>Questions answered: <strong id="qCount">0</strong></p>
+            <p>Correct rate: <strong id="correctRate">—</strong></p>
+          </div>
+          <div class="sync-btns">
+            <button class="btn btn-sm btn-secondary" id="exportData">Export Data</button>
+            <button class="btn btn-sm btn-secondary" id="importData">Import Data</button>
+            <input type="file" id="importFile" accept=".json" hidden>
+            <button class="btn btn-sm btn-secondary" id="resetProgress">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Planner -->
+  <section id="planner" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">📅 Study Planner</h2>
+      <p class="section-sub">Plan your week. Add subjects to each day. Data is saved in your browser.</p>
+      <div class="planner-wrap">
+        <div class="planner-add">
+          <select id="plannerSubject"></select>
+          <select id="plannerDay">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+          <input type="text" id="plannerNote" placeholder="Optional note (e.g. 2 hrs)">
+          <button class="btn btn-primary" id="addPlanItem">Add</button>
+        </div>
+        <div class="planner-grid" id="plannerGrid">
+          <!-- Days populated by JS -->
+        </div>
+        <button class="btn btn-sm btn-secondary" id="clearPlanner">Clear Week</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Favourites Section -->
+  <section id="favourites" class="section">
+    <div class="container">
+      <h2 class="section-title">★ Your Favourites</h2>
+      <p class="section-sub">Subjects you have starred for quick revision. Click the star on any subject card to add or remove it.</p>
+      <div class="subjects-grid" id="favouritesGrid">
+        <p class="empty-fav" id="emptyFavourites">No favourites yet. Go to Subjects and click the ★ on cards you want to save.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section id="resources" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Free & Recommended Resources</h2>
+      <p class="section-sub">Curated high-quality free (or freemium) tools used by medical students worldwide.</p>
+      
+      <div class="resources-grid">
+        <a href="https://geekymedics.com/" target="_blank" rel="noopener" class="resource-card">
+          <h4>Geeky Medics</h4>
+          <p>OSCE guides, free MCQs, clinical skills & revision notes.</p>
+        </a>
+        <a href="https://teachmeanatomy.info/" target="_blank" rel="noopener" class="resource-card">
+          <h4>TeachMeAnatomy</h4>
+          <p>Clear, illustrated anatomy articles and quizzes.</p>
+        </a>
+        <a href="https://teachmephysiology.com/" target="_blank" rel="noopener" class="resource-card">
+          <h4>TeachMePhysiology</h4>
+          <p>Concise physiology with clinical correlations.</p>
+        </a>
+        <a href="https://www.kenhub.com/" target="_blank" rel="noopener" class="resource-card">
+          <h4>Kenhub</h4>
+          <p>Anatomy quizzes, videos and atlas (free tier available).</p>
+        </a>
+        <a href="https://www.amboss.com/" target="_blank" rel="noopener" class="resource-card">
+          <h4>AMBOSS</h4>
+          <p>Library + Qbank (popular paid tool with trial).</p>
+        </a>
+        <a href="https://www.ankiweb.net/" target="_blank" rel="noopener" class="resource-card">
+          <h4>Anki</h4>
+          <p>Spaced-repetition flashcards — the gold standard for med school.</p>
+        </a>
+        <a href="https://openstax.org/subjects/science" target="_blank" rel="noopener" class="resource-card">
+          <h4>OpenStax</h4>
+          <p>Free peer-reviewed textbooks (Anatomy & Physiology, Biology, etc.).</p>
+        </a>
+        <a href="https://www.ncbi.nlm.nih.gov/books/NBK430685/" target="_blank" rel="noopener" class="resource-card">
+          <h4>StatPearls (NCBI)</h4>
+          <p>Free clinical articles and summaries.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Study Tips for Medical Students</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>1. Active Recall > Re-reading</h4>
+          <p>Close the book and test yourself. Use questions and flashcards daily.</p>
+        </div>
+        <div class="tip-card">
+          <h4>2. Spaced Repetition</h4>
+          <p>Review material at increasing intervals (Anki is perfect for this).</p>
+        </div>
+        <div class="tip-card">
+          <h4>3. Integrate Clinical Early</h4>
+          <p>Link basic science to real patients and cases from day one.</p>
+        </div>
+        <div class="tip-card">
+          <h4>4. Practice Past Papers</h4>
+          <p>Simulate exam conditions. Analyse why you got questions wrong.</p>
+        </div>
+        <div class="tip-card">
+          <h4>5. Protect Sleep & Exercise</h4>
+          <p>Memory consolidation happens during sleep. Move your body daily.</p>
+        </div>
+        <div class="tip-card">
+          <h4>6. Teach Someone</h4>
+          <p>Explaining a concept out loud is one of the best ways to master it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>MedLounge</strong> — Free study lounge built for medical & physiotherapy students.</p>
+      <p class="footer-note">Sample questions are original or public-domain style for educational practice only. Always refer to your own curriculum and official past papers. This is not a substitute for formal medical education.</p>
+      <p class="footer-copy">© 2026 MedLounge. Made to help future doctors & physiotherapists.</p>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
